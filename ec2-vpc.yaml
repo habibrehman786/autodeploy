@@ -12,19 +12,19 @@ Parameters:
     Default: VPC
     
   KeyPairName:
-    Description: Saturdaykp
+    Description: testkeypair
     Type: 'AWS::EC2::KeyPair::KeyName'  # standard type
-    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+    ConstraintDescription: testkeypair
   
   InstanceType:
     Description: EC2 instance type
     Type: String
-    Default: t3.nano
+    Default: t2.micro
     
   InstanceImageId:
     Description: EC2 Image Id from this region
     Type: AWS::EC2::Image::Id
-    Default: ami-0a8b4cd432b1c3063 # defaults for amazon linux in us-east-1 region  
+    Default: ami-0c7217cdde317cfec # defaults for amazon linux in us-east-1 region  
     
 Resources:
   # create a security group
