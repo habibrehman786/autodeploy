@@ -13,7 +13,9 @@ jobs:
     environment: dev
     
     steps:
-      - uses: actions/checkout@3
+      - uses: actions/checkout@2
+        with: |
+        if: 'dev'
 
       - name: Run a script
         run: |
