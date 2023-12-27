@@ -13,7 +13,7 @@ jobs:
     environment: dev
     
     steps:
-      - uses: actions/checkout@2
+      - uses: actions/checkout@3
 
       - name: Run a script
         run: |
@@ -25,7 +25,7 @@ jobs:
   # This workflow contains a single job called "build
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
-      - uses: actions/checkout@2
+      - uses: actions/checkout@3
 
       - name: Run a script
         run: |
@@ -36,7 +36,7 @@ jobs:
     needs: staging
 
     steps: 
-      - uses: actions/checkout@2
+      - uses: actions/checkout@3
 
       - name: Run a script
         run: |
