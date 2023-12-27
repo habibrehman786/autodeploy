@@ -10,9 +10,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  DEV:
+  dev:
     runs-on: ubuntu-latest
-    environment: DEV
+    environment: dev
     
     steps:
       - uses: actions/checkout@2
@@ -20,10 +20,10 @@ jobs:
       - name: Run a script
         run: |
           echo "I am running dev"
-  QA:
+  staging:
     runs-on: ubuntu-latest
     environment: staging
-    needs: DEV
+    needs: dev
   # This workflow contains a single job called "build
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps: 
@@ -32,14 +32,15 @@ jobs:
       - name: Run a script
         run: |
           echo "I am running staging"
-  PROD: 
+  prod: 
     runs-on: ubuntu-latest
-    environment: PROD
-    needs: QA
+    environment: prod
+    needs: staging
 
     steps: 
       - uses: actions/checkout@2
 
       - name: Run a script
         run: |
+          echo "I am running prod"
           echo "I am running staging"
